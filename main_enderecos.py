@@ -2,7 +2,7 @@ import pymysql
 from app import app
 from config import mysql, auth
 from flask import jsonify, Response
-from flask import flash, request
+from flask import request
 from mysql.connector import Error
 from contextlib import closing
 
@@ -144,4 +144,4 @@ def not_found(error=None):
 
 if __name__ == "__main__":
     create_table()
-    app.run(debug=True, port=5300)
+    app.run(debug=True, port=5001)
