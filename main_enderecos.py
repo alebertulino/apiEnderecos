@@ -7,12 +7,6 @@ from contextlib import closing
 
 basic_auth = auth
 
-#Criando a Tabela endereco
-def create_table():
-	conn = mysql.connect()
-	cursor = conn.cursor(pymysql.cursors.DictCursor)
-	cursor.execute("CREATE TABLE IF NOT EXISTS cadastro.endereco(idCliente INTEGER NOT NULL, rua VARCHAR(100) NOT NULL, numero INT NOT NULL, bairro VARCHAR(60) NOT NULL, cidade VARCHAR(60) NOT NULL, estado VARCHAR(60) NOT NULL, cep VARCHAR(20) NOT NULL, PRIMARY KEY(idEndereco), FOREIGN KEY(idCliente) REFERENCES cliente(id))")
-
 #Criando as Rotas API's para a Tabela Endereço
 @app.route('/enderecos', methods = ['POST'])
 @basic_auth.required
