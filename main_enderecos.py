@@ -3,7 +3,6 @@ from app import app
 from config import mysql, auth
 from flask import jsonify, Response
 from flask import request
-from mysql.connector import Error
 from contextlib import closing
 
 basic_auth = auth
